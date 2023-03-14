@@ -210,7 +210,9 @@ app.mount("#app");
 
 ```
   <main id="app">
-    <img v-if="isLoading" src="images/spin.gif" alt="loading">
+    <img v-if="isLoading" src="images/spin.gif" alt="loasding">
+    <img v-if="isError" src="images/error.png" alt="error">
+    <div v-if="!isError && !isLoading" class="weather-summary">
       ...
 ```
 
