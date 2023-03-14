@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<head>
+  <title>City Weather</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+  <main id="app">
+    <img v-if="isLoading" src="images/spin.gif" alt="">
+    <img v-if="isError" src="images/error.png" alt="">
+    <div v-if="!isError && !isLoading" class="weather-summary">
+      <h2>{{city}}</h2>
+      <img :src="image" alt="">
+      <h3>{{temperature}} ºC</h3>
+    </div>
+  </main>
+  <script src="app.js"></script>
+</body>
