@@ -162,7 +162,6 @@ app.mount("#app");
     const response = await fetch('https://xyz.com/jercilla/json-server-weather/cities/BIO')
                            .catch((e) => {
                              console.log('****ERROR', e)
-                             this.isLoading = false
                              this.isError = true
                            })    
     if (!this.isError && response?.ok) {
