@@ -101,11 +101,11 @@ app.mount("#app");
 ```
   async mounted(){
     const response = await fetch('https://my-json-server.typicode.com/jercilla/json-server-weather/cities/BIO')
-    const bilbaoWheater = await response.json()
+    const data = await response.json()
     
-    this.temperature = bilbaoWheater.temperature
-    this.city = bilbaoWheater.city
-    if (bilbaoWheater.rain_probability > 0.5) {
+    this.temperature = data.temperature
+    this.city = data.id
+    if (data.rain_probability > 0.5) {
       this.image = 'images/rain.png'
     } else {
       this.image = 'images/sunny.png'
