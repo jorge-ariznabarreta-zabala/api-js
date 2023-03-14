@@ -100,7 +100,8 @@ app.mount("#app");
 
 ```
   async mounted(){
-    const response = await fetch('https://my-json-server.typicode.com/jercilla/json-server-weather/cities/BIO')
+    const url = 'https://xyz.com/jercilla/json-server-weather/cities/BIO'
+    const response = await fetch(url)
     const data = await response.json()
     
     this.temperature = data.temperature
@@ -125,8 +126,9 @@ app.mount("#app");
 
 ```
   async mounted(){
+    const url = 'https://xyz.com/jercilla/json-server-weather/cities/NYC'
     this.isError = false
-    const response = await fetch('https://my-json-sorver.typicode.com/jercilla/json-server-weather/cities/BIO')
+    const response = await fetch(url)
     
     if (response.ok) {
       ...
@@ -158,8 +160,9 @@ app.mount("#app");
 
 ```
   async mounted(){
+    const url = 'https://xyz.com/jercilla/json-server-weather/cities/NYC'
     this.isError = false
-    const response = await fetch('https://xyz.com/jercilla/json-server-weather/cities/BIO')
+    const response = await fetch(url)
                            .catch((e) => {
                              console.log('****ERROR', e)
                              this.isError = true
@@ -180,9 +183,10 @@ app.mount("#app");
 
 ```
   async mounted(){
+    const url = 'https://xyz.com/jercilla/json-server-weather/cities/NYC'
     this.isError = false
     this.isLoading = true
-    const response = await fetch('https://json-server.typicode.com/jercilla/json-server-weather/cities/BIO')
+    const response = await fetch(url)
                            .catch((e) => {
                              console.log('****ERROR', e)
                              this.isLoading = false
