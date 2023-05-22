@@ -1,0 +1,33 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "cities": [
+    {
+      "id": "BIO",
+      "name": "Bilbao",
+      "temperature": 19,
+      "rain_probability": 0.9
+    },
+    {
+      "id": "MNG",
+      "name": "Managua",
+      "temperature": 20,
+      "rain_probability": 0.14
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+  <title>City Weather</title>
+  <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+  <a href="index.html">SALTA a INDEX</a>
+  <main id="app">
+    <img v-if="isLoading" src="images/spin.gif" alt="loading">
+    <img v-if="isError" src="images/error.png" alt="error">
+    <div v-if="!isError && !isLoading" >
+        <h1>ADMIN</h1>
+        <label>ID: <input type="text" v-model="id"></label>
+        <label>Nombre: <input type="text" v-model="name"></label>
+        <label>Temp: <input type="number" v-model="temperature"> ºC</label>
+        <label>Prob. lluvia: <input type="number" v-model="rain_probability"></label>
+        <button @click="CreateCity()">POST - Create ciudad</button>
+        <button @click="DeleteCity(id)">DEL - Delete ciudad</button>
+        <button @click="UpdateCity()">PUT - Update ciudad</button>
+      </div>
+      <pre>{{$data}}</pre>
+  </main>
+  <script src="admin.js"></script>
+</body>

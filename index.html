@@ -2,11 +2,23 @@
 <head>
   <title>City Weather</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/vue@latest"></script>
+  <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
 </head>
 <body>
-  <div class="weather-summary">
-    <h2>BIO</h2>
-    <img src="images/rain.png">
-    <h3>11 ºC</h3>
-  </div>
+  <a href="admin.html">SALTA a ADMIN</a>
+  <main id="app">
+    <img v-if="isLoading" src="images/spin.gif" alt="loasding">
+    <img v-if="isError" src="images/error.png" alt="error">
+    <div v-if="isError == false && isLoading == false" class="weather-summary">
+      <h2>{{city}}</h2>
+      <img :src='image'>
+      <h3>{{temperature}} ºC</h3>
+    </div>
+    <label>Nombre: <input type="text" v-model="id" @blur="getCity"></label>
+    <pre>
+      {{$data}}
+    </pre>
+  </main>
+  <script src="app.js"></script>
 </body>
