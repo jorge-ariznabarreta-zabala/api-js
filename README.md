@@ -237,9 +237,16 @@ https://es.wikipedia.org/wiki/Transferencia_de_Estado_Representacional
 
 ## 8 Servidor _backend_ local
 
-`git clone https://github.com/jercilla/json-server-weather.git`
+```
+git clone https://github.com/jercilla/json-server-weather.git
 
-`npx json-server --watch db.json`
+code json-server-weather
+
+(open terminal)
+
+npx json-server --watch db.json
+```
+
 
 - Seleccionar todos: `GET /cities`
 ```
