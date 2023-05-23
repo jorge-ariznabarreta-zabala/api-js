@@ -15,9 +15,21 @@
       <img :src='image'>
       <h3>{{temperature}} ºC</h3>
     </div>
-    <label>Nombre: <input type="text" v-model="id" @blur="getCity"></label>
+    <!-- <label>Nombre: <input type="text" v-model="id" @blur="getCity"></label> -->
+    <label>Nombre:
+      <select v-model="id" @change="getCity">
+        <!-- Opciones del select -->
+        <option value="">Seleccione una opción</option>
+        <!-- <option value="BIO">Bilbao</option>
+        <option value="MAD">Madrid</option>
+        <option value="BER">Berlin</option> -->
+        <option v-for="city in cities" :value="city.id">{{ city.name}}</option>
+      </select>
+    </label>
+    
     <pre>
       {{$data}}
+      {{$cities}}
     </pre>
   </main>
   <script src="app.js"></script>
